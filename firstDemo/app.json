@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/list",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "建玛特购年会抽奖",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#fff",
+    "selectedColor":"#13227a",
+    "backgroundColor":"#ff4040",
+    "position":"bottom",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"pages/img/more.png",
+        "selectedIconPath": "pages/img/more-select.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "列表",
+        "iconPath": "pages/img/list.png",
+        "selectedIconPath": "pages/img/list-select.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "pages/img/smile.png",
+        "selectedIconPath": "pages/img/smile-select.png"
+      }
+    ]
+  }
+
+}
