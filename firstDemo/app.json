@@ -29,6 +29,7 @@
         "selectedIconPath": "pages/img/list-select.png"
       },
       {
+          
         "pagePath": "pages/logs/logs",
         "text": "日志",
         "iconPath": "pages/img/smile.png",
