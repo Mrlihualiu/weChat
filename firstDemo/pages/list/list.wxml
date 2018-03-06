@@ -11,6 +11,8 @@
 <button bindtap='changeAutoplay'>自动切换</button>
 <slider bindchange='intercalChange' show-value min="500" max="2000" />切换时间
 <slider bindchange='durationChange' show-value min="1000" max="10000" />滑动动画时长 -->
+<icon type='success'></icon>
+<progress percent='70' show-info='true' active></progress>
 <view class="section">
   <view class="section__title">movable-view区域小于movable-area</view>
   <movable-area style="height: 200px;width: 200px;background: red;">
