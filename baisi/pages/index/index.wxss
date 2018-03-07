@@ -1,0 +1,9 @@
+/**index.wxss**/
+.topTab{
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.topTabItems{
+  width: 150rpx;
+}

@@ -1,7 +1,7 @@
 
-<!-- <swiper indicator-dots='{{indicatorDots}}' 
+ <swiper indicator-dots='{{indicatorDots}}' 
   autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' circular='true'>
-  <block wx:for="{{imgUrls}}" >
+  <block wx:for="{{imgUrls}}" wx:key='key' >
     <swiper-item>
       <image src="{{item}}" class='swiper-img' width='414' height='150' />
     </swiper-item>
@@ -9,10 +9,13 @@
 </swiper>
 <button bindtap='changeIndicatorDots'>面板指示点</button>
 <button bindtap='changeAutoplay'>自动切换</button>
+
 <slider bindchange='intercalChange' show-value min="500" max="2000" />切换时间
-<slider bindchange='durationChange' show-value min="1000" max="10000" />滑动动画时长 -->
+<slider bindchange='durationChange' show-value min="1000" max="10000" />滑动动画时长 
+
 <icon type='success'></icon>
 <progress percent='70' show-info='true' active></progress>
+
 <view class="section">
   <view class="section__title">movable-view区域小于movable-area</view>
   <movable-area style="height: 200px;width: 200px;background: red;">
@@ -22,9 +25,101 @@
   <view class="btn-area">
     <button size="mini" bindtap="tap">click me to move to (30px, 30px)</button>
   </view>
-  <view class="section__title">movable-view区域大于movable-area</view>
-  <movable-area style="height: 100px;width: 100px;background: red;" direction="all">
-    <movable-view style="height: 200px; width: 200px; background: blue;">
-    </movable-view>
-  </movable-area>
+</view>
+
+<view class='list'>
+  <view>1.button 按钮</view>
+  <button size='mini' type='warn'>mini按钮</button>
+  <button type='{{button_type}}' open-type='contact' loading='{{loading}}' disabled='{{disabled}}'>{{button_text}}</button>
+  <button bindtap='changeLoading'>改变加载状态和文字</button>
+</view>
+
+<view class='list'>
+  <view>2.checkbox-group 多选框</view>
+  <checkbox-group bindchange='checkboxChange'>
+    <label wx:for='{{checkbox_group_data}}' wx:key='key'>
+      <checkbox value='{{item.value}}' checked='{{item.checked}}'/>{{item.name}}
+    </label>
+  </checkbox-group>
+  <view>选中的有：{{checkbox_arr}}</view>
+</view>
+
+<view class='list'>
+  <view>3.from 表单</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section section_gap">
+      <view class="section__title">switch</view>
+      <switch name="switch"/>
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">slider</view>
+      <slider name="slider" show-value ></slider>
+    </view>
+
+    <view class="section">
+      <view class="section__title">input</view>
+      <input name="input" placeholder="please input here" />
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">radio</view>
+      <radio-group name="radio-group">
+        <label><radio value="radio1"/>radio1</label>
+        <label><radio value="radio2"/>radio2</label>
+      </radio-group>
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">checkbox</view>
+      <checkbox-group name="checkbox">
+        <label><checkbox value="checkbox1"/>checkbox1</label>
+        <label><checkbox value="checkbox2"/>checkbox2</label>
+      </checkbox-group>
+    </view>
+    <view class="btn-area">
+      <button formType="submit">Submit</button>
+      <button formType="reset">Reset</button>
+    </view>
+  </form>
+</view>
+
+<view class='list input'>
+  <view>4.input 输入框</view>
+  <view class="section">
+    <input placeholder="这是一个可以自动聚焦的input" auto-focus/>
+  </view>
+  <view class="section">
+    <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+    <view class="btn-area">
+      <button bindtap="bindButtonTap">使得输入框获取焦点</button>
+    </view>
+  </view>
+  <view class="section">
+    <input  maxlength="10" placeholder="最大输入长度10" />
+  </view>
+  <view class="section">
+    <view class="section__title">你输入的是：{{inputValue}}</view>
+    <input  bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+  </view>
+  <view class="section">
+    <input  bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
+  </view>
+  <view class="section">
+    <input password type="number" />
+  </view>
+  <view class="section">
+    <input password type="text" />
+  </view>
+  <view class="section">
+    <input type="digit" placeholder="带小数点的数字键盘"/>
+  </view>
+  <view class="section">
+    <input type="idcard" placeholder="身份证输入键盘" />
+  </view>
+  <view class="section">
+    <input placeholder-style="color:red" placeholder="占位符字体是红色的" />
+  </view>
+</view>
+
+<view class='list'>
+  <view>5.picker 滚动选择器</view>
+  <picker mode='multiSelector'></picker>
 </view>

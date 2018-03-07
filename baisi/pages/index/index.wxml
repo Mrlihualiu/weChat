@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<!-- 顶部菜单导航 -->
+<view class='topTab' wx:for='{{topTabItems}}' wx:key='key'>
+    <view class='topTabItems'>{{item}}</view>
+</view> 
