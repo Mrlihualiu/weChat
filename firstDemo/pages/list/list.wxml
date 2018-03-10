@@ -121,5 +121,7 @@
 
 <view class='list'>
   <view>5.picker 滚动选择器</view>
-  <picker mode='multiSelector'></picker>
+  <picker mode='multiSelector'>
+    
+  </picker>
 </view>

@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/welcome/welcome",
     "pages/list/list",
     "pages/index/index",
     "pages/logs/logs"
@@ -7,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "建玛特购年会抽奖",
+    "navigationBarTitleText": "hello world",
     "navigationBarTextStyle":"black"
   },
   "tabBar":{
