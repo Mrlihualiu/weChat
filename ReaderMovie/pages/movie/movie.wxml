@@ -1,0 +1,29 @@
+<view>
+  <!-- 搜索框 -->
+  <view class='search'>
+    <image class='search-icon' src='/images/icon/search.png' />
+    <input placeholder='奥斯卡最佳影片《水形物语》'></input>
+  </view>
+  <!-- 正在热映 -->
+  <view class='hot'>
+    <view class='list-title'>
+      <text>正在热映</text>
+      <text class='more'>更多({{hotNumber}}) ></text>
+    </view>
+    <view class='movie-list'>
+    <bolck wx:for='{{movieList}}' wx:key='key'>
+      <view class='movie-items'>
+        <view class='movie-img-container'>
+          <image class='movie-img' src='{{item.img}}' />
+          <text class='score'>观众评 {{item.sc}}</text>
+        </view>
+        <view>
+          <view class='movie-name'>{{item.nm}}</view>
+          <!-- <view class='movie-content'>正邪大战，强势来袭</view> -->
+        </view>
+      </view>
+    </bolck>
+    </view>
+  </view>
+  <!-- 即将上映 -->
+</view>

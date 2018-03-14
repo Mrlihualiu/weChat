@@ -1,7 +1,9 @@
 {
   "pages":[
+    "pages/movie/movie",
     "pages/index/index",
     "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -21,7 +23,7 @@
         "selectedIconPath": "/images/tab/yuedu_hl.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/movie/movie",
         "text": "电影",
         "iconPath": "/images/tab/dianying.png",
         "selectedIconPath": "/images/tab/dianying_hl.png"

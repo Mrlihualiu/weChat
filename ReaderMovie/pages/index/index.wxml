@@ -10,23 +10,23 @@
   </swiper>
   <!-- 列表 -->
   <view class='article-container'>
-    <view class='article-list'>
+    <view class='article-list' wx:for='{{articleLists}}' wx:key='key'>
 
       <view class='article-items'>
         <view class='items-title-info'>
-          <image src='/images/avatar/1.png'/>
-          <text>Nev 25 2018</text>
+          <image src='{{item.avatarUrl}}'/>
+          <text>{{item.date}}</text>
         </view>
-        <view class='items-title'>正是虾肥蟹壮时</view>
-        <image class='items-img' src='/images/post/crab.png'/>
+        <view class='items-title'>{{item.title}}</view>
+        <image class='items-img' src='{{item.imgUrl}}'/>
         <view class='items-text'>
-          <text>皮皮虾是生活在海底的一种软壳动物，广泛分布于大西洋，太平洋中国南海沿岸。深受世界广大人民喜爱与追捧。</text>
+          <text>{{item.content}}</text>
         </view>
         <view class='items-info'>
             <image src='/images/icon/chat.png' />
-            <text>92</text>
-            <image src='/images/icon/chat1.png' />
-            <text>65</text>
+            <text>{{item.thumbs}}</text>
+            <image class='items-comment' src='/images/icon/chat1.png' />
+            <text>{{item.comment}}</text>
         </view>
       </view>
 
