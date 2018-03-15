@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/movie/movie",
+    "pages/welcome/welcome",
     "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/movie/movie",
+    "pages/logs/logs" 
   ],
   "window":{
     "backgroundTextStyle":"light",

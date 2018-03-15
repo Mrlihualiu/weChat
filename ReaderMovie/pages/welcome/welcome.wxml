@@ -1,7 +1,7 @@
 <view class='container'>
-  <image class='user-avatar' src='../img/4.png'></image>
+  <image class='user-avatar' src='/images/avatar/4.png'></image>
   <text class='user-name'>hello,四月</text>
-  <view class='moto-container' bindtap='goIndex'>
+  <view class='moto-container' bindtap='golist'>
     <text class="moto">开始小程序之旅</text>
   </view>
 </view>

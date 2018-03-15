@@ -15,7 +15,7 @@
       <view class='movie-items'>
         <view class='movie-img-container'>
           <image class='movie-img' src='{{item.img}}' />
-          <text class='score'>观众评 {{item.sc}}</text>
+          <text class='score'>{{item.sc==0?'想看 '+item.wish+'人':'观众评 '+item.sc}}</text>
         </view>
         <view>
           <view class='movie-name'>{{item.nm}}</view>

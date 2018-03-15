@@ -7,11 +7,15 @@ Page({
   data: {
   
   },
-  goIndex:function(){
+  golist: function () {
+    console.log('点击了');
     wx.navigateTo({
-      url: '../index/index',
-    })
-  }
+      url: '../logs/logs',
+    });
+    // wx.redirectTo({
+    //   url: '../index/index',
+    // });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
