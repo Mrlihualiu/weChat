@@ -8,9 +8,8 @@ Page({
   
   },
   golist: function () {
-    console.log('点击了');
-    wx.navigateTo({
-      url: '../logs/logs',
+    wx.switchTab({
+      url: '../index/index',
     });
     // wx.redirectTo({
     //   url: '../index/index',

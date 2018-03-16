@@ -26,4 +26,8 @@
     </view>
   </view>
   <!-- 即将上映 -->
+  <view bindtap='demo'>
+    <button>点击执行</button>
+  </view>
+  <view animation="{{animationData}}" style="margin-left:200rpx;background:red;height:100rpx;width:100rpx"></view>
 </view>
