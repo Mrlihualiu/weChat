@@ -29,5 +29,13 @@
   <view bindtap='demo'>
     <button>点击执行</button>
   </view>
-  <view animation="{{animationData}}" style="margin-left:200rpx;background:red;height:100rpx;width:100rpx"></view>
+  <view bindtap='scanCode'>
+    <button>扫一扫</button>
+  </view>
+  <view>当前网络信号：{{networkType}}</view>
+  <view>手机品牌：{{systemInfo.brand}}</view>
+  <view>手机型号：{{systemInfo.model}}</view>
+  <view>微信版本：{{systemInfo.version}}</view>
+  <view>操作系统版本：{{systemInfo.system}}</view>
+  <view>客户端平台：{{systemInfo.platform}}</view>
 </view>

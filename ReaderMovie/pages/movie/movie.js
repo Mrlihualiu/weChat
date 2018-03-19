@@ -5,12 +5,21 @@ Page({
    */
   data: {
     movieList:[],
-    hotNumber: ''
+    hotNumber: '',
+    systemInfo: '',
+    networkType: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  scanCode:function(){
+    wx.scanCode({
+      success:res => {
+        console.log(res);
+      }
+    });
+  },
   demo:function(){
     // wx.showToast({
     //   title: '提交信息成功',
@@ -36,15 +45,27 @@ Page({
     //     }
     //   }
     // })
-    wx.showActionSheet({
-      itemList: ['美国', '英国', '澳大利亚'],
-      success: function (res) {
-        console.log(res.tapIndex)
+    // wx.showActionSheet({
+    //   itemList: ['美国', '英国', '澳大利亚'],
+    //   success: function (res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+    const that = this;
+    wx.vibrateShort({
+      
+    });
+    wx.getNetworkType({
+      success: function(res) {
+        var networkType = res.networkType;
+        that.setData({
+          networkType:networkType
+        });
       },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    })
+    });
   },
   onLoad: function (options) {
     const that = this;
@@ -65,55 +86,29 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    wx.startPullDownRefresh();
+    var that = this;
+    wx.getSystemInfo({
+      success: function(res) {
+        var systemInfo = {
+          brand:res.brand,
+          model:res.model,
+          version:res.version,
+          system: res.system,
+          platform: res.platform
+        };
+        that.setData({
+          systemInfo: systemInfo
+        });
+      },
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: 'ease-in',
-    })
-
-    this.animation = animation
-
-    animation.scale(2, 2).rotate(45).step()
-
-    this.setData({
-      animationData: animation.export()
-    })
-
-    setTimeout(function () {
-      animation.translate(30).step()
-      this.setData({
-        animationData: animation.export()
-      })
-    }.bind(this), 1000)
-  },
-  rotateAndScale: function () {
-    // 旋转同时放大
-    this.animation.rotate(45).scale(2, 2).step()
-    this.setData({
-      animationData: this.animation.export()
-    })
-  },
-  rotateThenScale: function () {
-    // 先旋转后放大
-    this.animation.rotate(45).step()
-    this.animation.scale(2, 2).step()
-    this.setData({
-      animationData: this.animation.export()
-    })
-  },
-  rotateAndScaleThenTranslate: function () {
-    // 先旋转同时放大，然后平移
-    this.animation.rotate(45).scale(2, 2).step()
-    this.animation.translate(100, 100).step({ duration: 1000 })
-    this.setData({
-      animationData: this.animation.export()
-    })
+    
   },
 
   /**
